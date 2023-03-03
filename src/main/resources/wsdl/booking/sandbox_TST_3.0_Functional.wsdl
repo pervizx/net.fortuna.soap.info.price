@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created with WSDLGenerator 2.0.0 by Amadeus SAS-->
+<!--  Amadeus Proprietary and Confidential Information: unauthorized use and disclosure strictly forbidden. 2015 - Amadeus s.a.s - All Rights Reserved.  -->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:fare_informativepricingwithoutpnr_18_1="http://xml.amadeus.com/TIPNRQ_18_1_1A" xmlns:fare_informativepricingwithoutpnrreply_18_1="http://xml.amadeus.com/TIPNRR_18_1_1A" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://xml.amadeus.com/sandbox_PDT_3_0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xml.amadeus.com/sandbox_PDT_3_0">
+  <wsdl:types>
+    <xs:schema>
+      <xs:import schemaLocation="Fare_InformativePricingWithoutPNR_18_1_1A.xsd" namespace="http://xml.amadeus.com/TIPNRQ_18_1_1A" />
+      <xs:import schemaLocation="Fare_InformativePricingWithoutPNRReply_18_1_1A.xsd" namespace="http://xml.amadeus.com/TIPNRR_18_1_1A" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="Fare_InformativePricingWithoutPNR_18_1">
+    <wsdl:part name="Fare_InformativePricingWithoutPNR_18_1" element="fare_informativepricingwithoutpnr_18_1:Fare_InformativePricingWithoutPNR" />
+  </wsdl:message>
+  <wsdl:message name="Fare_InformativePricingWithoutPNRReply_18_1">
+    <wsdl:part name="Fare_InformativePricingWithoutPNRReply_18_1" element="fare_informativepricingwithoutpnrreply_18_1:Fare_InformativePricingWithoutPNRReply" />
+  </wsdl:message>
+  <wsdl:portType name="sandbox_PDT_3_0_ServicesPT">
+    <wsdl:operation name="Fare_InformativePricingWithoutPNR">
+      <wsdl:input message="tns:Fare_InformativePricingWithoutPNR_18_1" />
+      <wsdl:output message="tns:Fare_InformativePricingWithoutPNRReply_18_1" />
+    </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>
+<!--1F8B0800000000000000458D310BC2301406F7FE8A6F54A4E52508CADB4AC58028080ACED1BE21D0A42109A2FFDEA083E30D77672448B2C5CD01C579C9C5FAC8D0A4754BAAD55BEC931BED1BB461A598D630A7EB8A88899ADB657784F9F973C25352AE992A77D451334C4E42818D71728FEF80D1FF018B835ED6447F46B05E18D986F13EBF3E4D57ECAD90000000-->

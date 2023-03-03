@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created with WSDLGenerator 2.0.0 by Amadeus SAS-->
+<!--  Amadeus Proprietary and Confidential Information: unauthorized use and disclosure strictly forbidden. 2015 - Amadeus s.a.s - All Rights Reserved.  -->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:amasec="http://xml.amadeus.com/2010/06/Security_v1" xmlns:awsl="http://wsdl.amadeus.com/2010/06/ws/Link_v1" xmlns:awsse="http://xml.amadeus.com/2010/06/Session_v3" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://xml.amadeus.com/sandbox_PDT_3_0" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xml.amadeus.com/sandbox_PDT_3_0">
+  <wsp:Policy wsu:Id="MessagingPolicy">
+    <wsam:Addressing wsp:Optional="true">
+      <wsp:Policy>
+        <wsam:AnonymousResponses />
+      </wsp:Policy>
+    </wsam:Addressing>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="AmadeusPolicy">
+    <wsp:PolicyReference URI="#MessagingPolicy" />
+  </wsp:Policy>
+  <wsdl:import namespace="http://xml.amadeus.com/sandbox_PDT_3_0" location="sandbox_TST_3.0_Functional.wsdl" />
+  <wsdl:types>
+    <xs:schema>
+      <xs:import schemaLocation="AMA/2012B/AMA_WS_Session.xsd" namespace="http://xml.amadeus.com/2010/06/Session_v3" />
+      <xs:import schemaLocation="AMA_WSLink.xsd" namespace="http://wsdl.amadeus.com/2010/06/ws/Link_v1" />
+      <xs:import schemaLocation="AMA/2012B/AMA_SecurityHostedUser.xsd" namespace="http://xml.amadeus.com/2010/06/Security_v1" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="Session_3.000">
+    <wsdl:part name="session" element="awsse:Session" />
+  </wsdl:message>
+  <wsdl:message name="TransactionFlowLink_1.0">
+    <wsdl:part name="link" element="awsl:TransactionFlowLink" />
+  </wsdl:message>
+  <wsdl:message name="AMA_SecurityHostedUser_1.000">
+    <wsdl:part name="security" element="amasec:AMA_SecurityHostedUser" />
+  </wsdl:message>
+  <wsdl:operation name="Fare_InformativePricingWithoutPNR">
+    <soap:operation soapAction="http://webservices.amadeus.com/TIPNRQ_18_1_1A" />
+    <wsdl:input>
+      <soap:body use="literal" />
+      <soap:header message="tns:Session_3.000" part="session" use="literal" />
+      <soap:header message="tns:TransactionFlowLink_1.0" part="link" use="literal" />
+      <soap:header message="tns:AMA_SecurityHostedUser_1.000" part="security" use="literal" />
+    </wsdl:input>
+    <wsdl:output>
+      <soap:body use="literal" />
+      <soap:header message="tns:Session_3.000" part="session" use="literal" />
+      <soap:header message="tns:TransactionFlowLink_1.0" part="link" use="literal" />
+    </wsdl:output>
+  </wsdl:operation>
+  <wsdl:service name="sandbox_PDT_3_0_Services">
+    <wsdl:port binding="tns:AmadeusWebServicesBinding" name="AmadeusWebServicesPort">
+      <soap:address location="https://nodeA3.test.webservices.amadeus.com/1ASIWRIOJ2" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+<!--1F8B0800000000000000458D310BC2301406F7FE8A6F54A4E52508CADB4AC58028080ACED1BE21D0A42109A2FFDEA083E30D77672448B2C5CD01C579C9C5FAC8D0A4754BAAD55BEC931BED1BB461A598D630A7EB8A88899ADB657784F9F973C25352AE992A77D451334C4E42818D71728FEF80D1FF018B835ED6447F46B05E18D986F13EBF3E4D57ECAD90000000-->
